@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://JAVA.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<display-name>project1</display-name>
+	<servlet>
+		<servlet-name>reim-servlet</servlet-name>
+		<servlet-class>com.revature.servlets.ReimbursementServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>reim-servlet</servlet-name>
+		<url-pattern>/reim/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>user-servlet</servlet-name>
+		<servlet-class>com.revature.servlets.UserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>user-servlet</servlet-name>
+		<url-pattern>/users/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>test-servlet</servlet-name>
+		<servlet-class>com.revature.servlets.TestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>test-servlet</servlet-name>
+		<url-pattern>/test/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>auth-servlet</servlet-name>
+		<servlet-class>com.revature.servlets.AuthServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>auth-servlet</servlet-name>
+		<url-pattern>/auth</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>reimtype-servlet</servlet-name>
+		<servlet-class>com.revature.servlets.ReimTypeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>reimtype-servlet</servlet-name>
+		<url-pattern>/type</url-pattern>
+	</servlet-mapping>
+</web-app>
