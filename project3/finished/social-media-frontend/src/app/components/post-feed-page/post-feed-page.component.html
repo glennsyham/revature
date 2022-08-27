@@ -1,0 +1,37 @@
+<div class="sidebyside sticky">
+    <app-user-card></app-user-card>
+</div>
+
+<div [ngClass]="['sidebyside', 'post-feed-container']">
+    <div class="mind">
+        <form class="form" *ngIf="!createPost; else createPostTemplate">
+            <mat-form-field appearance="fill">
+                <mat-label>Something on your mind?</mat-label>
+                <input matInput (focus)="toggleCreatePost()">
+            </mat-form-field>
+        </form>
+    </div>
+
+    <ng-template #createPostTemplate>
+        <form class="form" [formGroup]="postForm" (ngSubmit)="submitPost($event)">
+            <mat-form-field appearance="fill">
+                <mat-label>Make a Post</mat-label>
+                <textarea matInput autofocus formControlName="text"></textarea>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Add an Image?</mat-label>
+                <input matInput formControlName="imageUrl">
+            </mat-form-field>
+            <div class="form-btns">
+                <button mat-button class="secondaryBtn" (click)="toggleCreatePost()">Cancel</button>
+                <button mat-button class="primaryBtn" (click)="submitPost($event)">Post</button>
+            </div>
+
+        </form>
+    </ng-template>
+
+    <div id="post-feed" *ngFor="let post of posts">
+        <app-post [post]="post"></app-post>
+    </div>
+    <app-scroll-to-top></app-scroll-to-top>
+</div>
