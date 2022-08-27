@@ -1,0 +1,57 @@
+String sql = "insert into offers (offer_price , product_id, user_id  ) values (?,?,?) returning id;";
+String sql = "select * from offers where id = ?";
+String sql = "select * from offers;";
+String sql = "select * from offers where status = ? order by product_id , offer_price desc;";
+String sql = "update offers set offer_price = ?  where id = ?;";
+String sql = "delete from offers where id = ?;";
+String sql = "select * from offers where user_id = ?";
+String sql = "select * from offers where user_id = ?";
+String sql_1 = "update offers set status = 1 where id = ?;";
+String sql_2 = "update offers set status = 2 where id != ? and product_id = ?;";
+String sql = "select count(id) as counter from offers where product_id = ? and status = 1";
+String sql = "delete from offers where product_id = ?;";
+String sql_1 = "update offers set status = 2 where id = ?;";
+String sql = "select * from offers where product_id = ? order by offer_price desc limit 1";
+String sql = "select * from offers where product_id = ? and user_id = ?";
+
+String sql = "insert into payment_connection (offer_price, payment_details, user_id, product_id, offers_id, transaction_no, active) values (?,?,?,?,?,?,1) returning id;";
+String sql = "select * from payment_connection where id = ?;";
+String sql = "delete from payment_connection where id = ?;";
+String sql = "select * from payment_connection where product_id = ? and user_id = ? and active = 1;";
+String sql = "select * from payment_connection where user_id = ?;";
+String sql = "select * from payment_connection where paymentconn_id = ? and user_id = ? and active = ?;";
+String sql = "update payment_connection set active = 0 where product_id = ? and  user_id = ? and active = 1;";
+String sql = "update payment_connection set active = 0, offers_id = null, product_id = null where product_id = ? and  user_id = ? and active = 1;";
+		
+String sql = "insert into  payment (paid, payment_connection_id) values (?,?) returning id;";
+String sql = "select * from payment  where id = ?;";
+String sql = "select * from  payment order by created_at desc;";
+String sql = "delete from payment where id = ?;";
+String sql = "select * from payment  where payment_connection_id = ? order by created_at asc limit 1;";
+String sql = "select * from payment where payment_connection_id = ? order by created_at asc";
+String sql = "select sum(paid) as total from payment  where payment_connection_id = ? ;";
+
+String sql = "insert into products (product_name, price) values (?,?) returning id;";
+String sql = "select * from products where id = ? ";
+String sql = "select * from products;";
+String sql = "select * from products where user_id is null  order by id;";
+	sql = "select * from products where user_id is not  null  order by id;";
+String sql = "update products set product_name = ?, price = ? where id = ?;";
+String sql = "delete from products where id = ?;";
+String sql = "update products set  user_id = ? where id = ?;";
+String sql = "update products set  user_id = null  where id = ?;";
+		String sql = "select * from products where user_id = ?";
+String sql = "select * from products where lower(product_name) like ?";
+String sql = "select * from products where lower(product_name) like ?";
+String sql = "select * from products where lower(product_name) like ? and user_id is null order by id";
+String sql = "select * from products where lower(product_name) like ? and id != ?";
+String sql = "update products set  paid_status = 1 where id = ?;";
+
+String sql = "insert into users (username, password, role_id) values (?,?,?) returning id;";
+String sql = "select * from users where id = ?;";
+String sql = "select * from users;";
+String sql = "select * from users where LOWER(username)  = ?;";
+String sql = "update users set username = ?, password = ? where id = ?;";
+String sql = "delete from users where id = ?;";
+String sql = "update users set status = ? where id = ?;";
+String sql = "select * from users where role_id = ?;";

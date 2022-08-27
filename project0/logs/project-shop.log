@@ -1,0 +1,45 @@
+23:56:39 [main] INFO  com.revature.daos.UserPostgres - select * from users where LOWER(username)  = 'aledgister0'
+23:56:39 [main] INFO  com.revature.controller.UserController - User [id=4, username=aledgister0, password=2juvlMU, role_id=2, status=1]
+00:08:04 [main] INFO  com.revature.daos.UserPostgres - select * from users where LOWER(username)  = 'chumbie1'
+00:08:04 [main] INFO  com.revature.controller.UserController - User [id=5, username=chumbie1, password=fG8xnyuvqq, role_id=1, status=1]
+00:08:22 [main] INFO  com.revature.daos.UserPostgres - select * from users where id = 26
+00:08:22 [main] INFO  com.revature.daos.PaymentConnDAO - select * from payment_connection where product_id = 18 and user_id = 26 and active = 1
+00:08:22 [main] INFO  com.revature.daos.PaymentPostgres - select * from payment where payment_connection_id = 12 order by created_at asc
+00:08:22 [main] INFO  com.revature.daos.UserPostgres - select * from users where id = 67
+00:08:23 [main] INFO  com.revature.daos.PaymentConnDAO - select * from payment_connection where product_id = 30 and user_id = 67 and active = 1
+00:08:23 [main] INFO  com.revature.daos.PaymentPostgres - select * from payment where payment_connection_id = 11 order by created_at asc
+00:08:38 [main] INFO  com.revature.daos.ProductPostgres - select * from products where lower(product_name) like '%cu%' ORDER by id
+00:08:54 [main] INFO  com.revature.daos.ProductPostgres - select * from products where lower(product_name) like 'testp'
+00:08:54 [main] INFO  com.revature.daos.ProductPostgres - insert into products (product_name, price) values ('testp',12.0) returning id
+00:09:31 [main] INFO  com.revature.daos.ProductPostgres - select * from products where id = 114 
+00:09:39 [main] INFO  com.revature.daos.ProductPostgres - select * from products where lower(product_name) like 'cars' and id != 114
+00:09:39 [main] INFO  com.revature.daos.ProductPostgres - update products set product_name = 'cars', price = 100.0 where id = 114
+00:09:59 [main] INFO  com.revature.daos.ProductPostgres - select * from products where id = 114 
+00:10:01 [main] INFO  com.revature.daos.ProductPostgres - delete from products where id = 114
+00:22:34 [main] INFO  com.revature.daos.PaymentConnDAO - select * from payment_connection where id = 11
+00:22:34 [main] INFO  com.revature.daos.UserPostgres - select * from users where id = 67
+00:22:34 [main] INFO  com.revature.daos.ProductPostgres - select * from products where id = 30 
+00:22:34 [main] INFO  com.revature.daos.PaymentConnDAO - select * from payment_connection where id = 12
+00:22:34 [main] INFO  com.revature.daos.UserPostgres - select * from users where id = 26
+00:22:34 [main] INFO  com.revature.daos.ProductPostgres - select * from products where id = 18 
+00:22:34 [main] INFO  com.revature.daos.PaymentConnDAO - select * from payment_connection where id = 11
+00:22:34 [main] INFO  com.revature.daos.UserPostgres - select * from users where id = 67
+00:22:34 [main] INFO  com.revature.daos.ProductPostgres - select * from products where id = 30 
+00:23:39 [main] INFO  com.revature.daos.UserPostgres - select * from users where LOWER(username)  = 'admin'
+00:23:39 [main] INFO  com.revature.controller.UserController - User [id=109, username=admin, password=admin, role_id=3, status=1]
+08:52:17 [main] INFO  com.revature.daos.UserPostgres - insert into users (username, password, role_id) values ('test','test',2) returning id
+08:52:17 [main] INFO  com.revature.daos.UserPostgres - delete from users where id = 144
+08:52:17 [main] INFO  com.revature.daos.UserPostgres - select * from users where id = 100
+08:52:17 [main] INFO  com.revature.daos.UserPostgres - delete from users where id = 0
+08:59:17 [main] INFO  com.revature.daos.UserPostgres - insert into users (username, password, role_id) values ('test','test',2) returning id
+08:59:17 [main] INFO  com.revature.daos.UserPostgres - delete from users where id = 145
+08:59:18 [main] INFO  com.revature.daos.UserPostgres - select * from users where id = 100
+08:59:18 [main] INFO  com.revature.daos.UserPostgres - delete from users where id = 0
+09:54:02 [main] INFO  com.revature.daos.UserPostgres - insert into users (username, password, role_id) values ('test','test',2) returning id
+09:54:02 [main] INFO  com.revature.daos.UserPostgres - delete from users where id = 146
+09:54:02 [main] INFO  com.revature.daos.UserPostgres - select * from users where id = 100
+09:54:02 [main] INFO  com.revature.daos.UserPostgres - delete from users where id = 0
+21:38:23 [main] INFO  com.revature.daos.UserPostgres - select * from users where LOWER(username)  = 'testcustomer'
+21:38:23 [main] INFO  com.revature.controller.UserController - User [id=142, username=testcustomer, password=12345, role_id=2, status=1]
+17:44:50 [main] INFO  com.revature.daos.UserPostgres - select * from users where LOWER(username)  = 'testcustomer'
+17:44:50 [main] INFO  com.revature.controller.UserController - User [id=142, username=testcustomer, password=12345, role_id=2, status=1]

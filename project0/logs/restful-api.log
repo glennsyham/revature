@@ -1,0 +1,6 @@
+15:09:31 [main] INFO  com.revature.daos.UserPostgres - select * from users where LOWER(username)  = 'testcustomer'
+15:09:31 [main] INFO  com.revature.controller.UserController - User [id=142, username=testcustomer, password=12345, role_id=2, status=1]
+15:09:34 [main] INFO  com.revature.daos.OfferPostgres - select * from offers where user_id = 142 ORDER by id
+15:09:34 [main] INFO  com.revature.daos.ProductPostgres - select * from products where id = 4 
+15:09:34 [main] INFO  com.revature.daos.ProductPostgres - select * from products where id = 29 
+15:09:34 [main] INFO  com.revature.daos.ProductPostgres - select * from products where id = 28 
