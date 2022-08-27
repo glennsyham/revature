@@ -1,3 +1,3 @@
 # revature
- all projects
+ all Angular/ Java projects
 061322-VA-JavaMSA
