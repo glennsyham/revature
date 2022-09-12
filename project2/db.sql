@@ -1,5 +1,5 @@
 
-CREATE TABLE public.users (
+CREATE TABLE users (
 	id SERIAL  PRIMARY KEY,
 	username varchar(30) NULL,
 	"password" varchar(100) NULL,
@@ -9,7 +9,7 @@ CREATE TABLE public.users (
 	status integer NULL
 );
 
-CREATE TABLE public."comments" (
+CREATE TABLE "comments" (
 	comment_id SERIAL  PRIMARY KEY,
 	anime_id integer NULL,
 	"comment" varchar(255) NULL,
@@ -17,7 +17,7 @@ CREATE TABLE public."comments" (
 );
  
 
-CREATE TABLE public.lists (
+CREATE TABLE lists (
 	id SERIAL  PRIMARY KEY,
 	anime_id integer NULL,
  	user_rating integer NULL,
