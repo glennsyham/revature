@@ -1,0 +1,31 @@
+ng new hashiras-front2 --routing=true
+npm install
+
+ng g c comments
+ng g c favorites
+ng g c footer
+ng g c home
+ng g c lists
+ng g c login
+ng g c nav
+ng g c profile
+ng g c register
+
+ng g class lists
+ng g class animelist
+ng g class animeprofile
+ng g class comment
+ng g class users
+ng g class lists
+ng g class list
+
+ng g s animelist
+ng g s auth
+ng g s comment
+ng g s lists
+ng g s user
+
+app.module.ts
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+ 

@@ -15,6 +15,7 @@ import { RegisterComponent } from './components/register/register.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CustomPipe } from './pipes/custom.pipe';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     NavComponent,
     ProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    CustomPipe
   ],
   imports: [
     BrowserModule,
