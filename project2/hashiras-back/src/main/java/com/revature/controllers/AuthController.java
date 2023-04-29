@@ -16,7 +16,7 @@ import com.revature.services.AuthService;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(exposedHeaders="Authorization", origins="*")
+@CrossOrigin(exposedHeaders = "Authorization", origins = "*")
 public class AuthController {
 
 	private AuthService as;
@@ -26,7 +26,7 @@ public class AuthController {
 		super();
 		this.as = as;
 	}
-	
+
 	/*-
 	 * Query params: localhost:8080/auth?username=[value]&password=[value]
 	 * 
@@ -34,18 +34,18 @@ public class AuthController {
 	 * 	- ?username=[value]&password=[value] in the request body
 	 */
 	@PostMapping
-	public ResponseEntity<UserDTO> login(@RequestParam(name="username")String username, @RequestParam(name="password") String password){
- 
+	public ResponseEntity<UserDTO> login(@RequestParam(name = "username") String username,
+			@RequestParam(name = "password") String password) {
+
 		User principal = as.login(username, password);
-		
+
 		String token = as.generateToken(principal);
-		
+
 		HttpHeaders headers = new HttpHeaders();
-		
-		headers.set("Authorization", token);		
-		
+
+		headers.set("Authorization", token);
+
 		return new ResponseEntity<>(new UserDTO(principal), headers, HttpStatus.OK);
-		
-		
-  	}
+
+	}
 }

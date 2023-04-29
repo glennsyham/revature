@@ -12,67 +12,74 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="comments")
-public class AnimeComments implements Serializable{
-	
+@Table(name = "comments")
+public class AnimeComments implements Serializable {
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="comment_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "comment_id")
 	private int commentId;
-	
-	@Column(name="anime_id")
+
+	@Column(name = "anime_id")
 	private int animeId;
-	
-	@ManyToOne(targetEntity=User.class)
-	@JoinColumn(name = "author")	
+
+	@ManyToOne(targetEntity = User.class)
+	@JoinColumn(name = "author")
 	private User author;
-	
-	@Column(name="comment")
+
+	@Column(name = "comment")
 	private String comment;
-	
-	//Variables
-	
+
+	// Variables
+
 	public int getAnimeId() {
 		return animeId;
 	}
+
 	public void setAnimeId(int animeId) {
 		this.animeId = animeId;
 	}
+
 	public User getAuthor() {
 		return author;
 	}
+
 	public void setAuthor(User author) {
 		this.author = author;
 	}
+
 	public String getComment() {
 		return comment;
 	}
+
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+
 	public int getCommentId() {
 		return commentId;
 	}
+
 	public void setCommentId(int commentId) {
 		this.commentId = commentId;
 	}
-	
-	//To String 
-	
+
+	// To String
+
 	@Override
 	public String toString() {
-		return "AnimeComments [commentId=" + commentId + ", animeId=" + animeId + ", commenter=" + author
-				+ ", comment=" + comment + "]";
+		return "AnimeComments [commentId=" + commentId + ", animeId=" + animeId + ", commenter=" + author + ", comment="
+				+ comment + "]";
 	}
-	
-	//Hash Equals
-	
+
+	// Hash Equals
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(animeId, comment, commentId, author);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -85,15 +92,5 @@ public class AnimeComments implements Serializable{
 		return animeId == other.animeId && Objects.equals(comment, other.comment) && commentId == other.commentId
 				&& Objects.equals(author, other.author);
 	}
-	
 
-	
-	
-
-
-	
-
-	
-	
-	
 }

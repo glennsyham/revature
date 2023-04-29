@@ -1,24 +1,8 @@
 package com.revature;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Component;
-
-import com.revature.models.AnimeList;
-
-import com.revature.services.AnimeListService;
-
-import com.revature.models.ListStatus;
-import com.revature.models.User;
-import com.revature.repositories.UserRepository;
-import com.revature.services.AnimeListService;
-import com.revature.services.UserService;
-
 
 @SpringBootApplication
 public class HashirasBackApplication {
@@ -26,9 +10,6 @@ public class HashirasBackApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HashirasBackApplication.class, args);
 	}
-	
-
- 
 
 }
 //@Component
@@ -71,7 +52,7 @@ public class HashirasBackApplication {
 //    	User principal = ur.findUserByUsername("LaneM123");
 //    	
 //    	System.out.println(principal);
-    	
+
 //    	long lg = as.deleteAnimeListById(20);
 //    	System.out.println(lg);
 //    }

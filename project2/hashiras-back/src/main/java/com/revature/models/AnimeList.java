@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 
@@ -26,7 +27,9 @@ public class AnimeList implements Serializable  {
 	@Column (name = "anime_id")
  	private int animeId;
 	 
+	
 	@ManyToOne(targetEntity=User.class)
+	@MapsId("userId")
 	@JoinColumn(name = "user_id")		
 	private User user;
     
@@ -36,7 +39,9 @@ public class AnimeList implements Serializable  {
 	@Enumerated(EnumType.STRING)
 	private ListStatus status;
 
-
+	@Column(name = "user_id")
+	private int userId;
+	
 	public int getId() {
 		return id;
 	}
@@ -78,9 +83,17 @@ public class AnimeList implements Serializable  {
 		this.animeId = animeId;
 	}
 
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(animeId, id, status, user, user_rating);
+		return Objects.hash(animeId, id, status, user, userId, user_rating);
 	}
 
 	@Override
@@ -93,14 +106,16 @@ public class AnimeList implements Serializable  {
 			return false;
 		AnimeList other = (AnimeList) obj;
 		return animeId == other.animeId && id == other.id && status == other.status && Objects.equals(user, other.user)
-				&& user_rating == other.user_rating;
+				&& userId == other.userId && user_rating == other.user_rating;
 	}
 
 	@Override
 	public String toString() {
 		return "AnimeList [id=" + id + ", animeId=" + animeId + ", user=" + user + ", user_rating=" + user_rating
-				+ ", status=" + status + "]";
+				+ ", status=" + status + ", userId=" + userId + "]";
 	}
+
+ 
 
  
  

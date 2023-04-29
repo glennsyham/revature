@@ -4,7 +4,7 @@
 
 export const environment = {
   animeApiUrl: 'https://api.jikan.moe/v4',
-  serverApiUrl: 'http://localhost:8080',
+  serverApiUrl: 'http://localhost:9080',
   production: false
 };
 

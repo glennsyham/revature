@@ -1,10 +1,11 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+//  serverApiUrl: 'http://ec2-3-17-191-189.us-east-2.compute.amazonaws.com:8081',
 
 export const environment = {
   animeApiUrl: 'https://api.jikan.moe/v4',
-  serverApiUrl: 'http://ec2-3-17-191-189.us-east-2.compute.amazonaws.com:8081',
+  serverApiUrl: 'http://localhost:9080',
   production: false
 };
 

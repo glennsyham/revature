@@ -1,15 +1,11 @@
 server:
-  error:
-    include-stacktrace: never
-  servlet:
-    session:
-      cookie:
-        path: /
-        name: JSESSIONID
-        http-only: true
-#        same-site: none
-        secure: true
+  port: 9080
 spring:
-  profiles:
-    active:
-      - "@profileActive@"
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=project3
+    username: postgres
+    password: 
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
