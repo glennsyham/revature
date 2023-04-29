@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "comments")
-public class AnimeComments implements Serializable {
+public class AnimeComments  {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

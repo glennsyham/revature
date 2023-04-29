@@ -19,15 +19,20 @@ export class CommentService {
     );
   }
 
-  addComment(comment: any) {
-    console.log(comment)
+  // public addComment(comment: any): Observable<Comment[]> {
 
-    const req = this.http.get(`${environment.serverApiUrl}/comment?animeId=${comment.anime_id}&author=${comment.author}&comment=${comment.comment}`).pipe(
+  //   return this.http.get(`${environment.serverApiUrl}/comment?animeId=${comment.anime_id}&author=${comment.author}&comment=${comment.comment}`).pipe(
+  //     map(
+  //       response => response as Comment[]
+  //     ));
+
+  // }
+  public postComment(comment: any): Observable<Comment[]> {
+
+    return this.http.post<any>(`${environment.serverApiUrl}/comment`, comment).pipe(
       map(
         response => response as Comment[]
       ));
 
-    req.subscribe();
   }
-
 }

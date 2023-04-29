@@ -113,8 +113,7 @@ public class AnimeListController {
 		al.setStatus(ListStatus.DROPPED);
 		al.setUser(u);
 		AnimeListDTO animeListDTO = new AnimeListDTO(al);
-		System.out.println(reqAnimeListDTO.toString());
-		try {
+ 		try {
 			u = us.getUserById(reqAnimeListDTO.getUser_id());
 		} catch (UserNotFoundException e) {
 			return new ResponseEntity<>(animeListDTO, HttpStatus.NOT_ACCEPTABLE);
@@ -134,7 +133,7 @@ public class AnimeListController {
 			}
 		}
 		return new ResponseEntity<>(animeListDTO, HttpStatus.CONFLICT);
-	}
+ 	}
 
 	@GetMapping("user/{id}/status/{status}")
 	public ResponseEntity<List<AnimeListDTO>> getListByUserIdAndStatus(@PathVariable("id") int id,
